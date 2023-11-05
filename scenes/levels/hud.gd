@@ -6,9 +6,15 @@ signal on_action_clicked(code: String)
 var _code1: String = ""
 var _code2: String = ""
 
+var messageLabel: Label
+var action1Button: Button
+var action2Button: Button
 
 func _ready():
 	$MessageNode.hide()
+	messageLabel = $MessageNode/Shape/Message
+	action1Button = $MessageNode/Shape/HFlowContainer/Action1Button
+	action2Button = $MessageNode/Shape/HFlowContainer/Action2Button
 
 
 func show_message(
@@ -18,15 +24,15 @@ func show_message(
 	action2: String = "",
 	code2: String = ""
 ):
-	$MessageNode/Message.text = message
-	$MessageNode/HFlowContainer/Action1Button.text = action1
+	messageLabel.text = message
+	action1Button.text = action1
 	_code1 = code1
 	if action2 != "":
-		$MessageNode/HFlowContainer/Action2Button.text = action2
-		$MessageNode/HFlowContainer/Action2Button.show()
+		action2Button.text = action2
+		action2Button.show()
 		_code2 = code2
 	else:
-		$MessageNode/HFlowContainer/Action2Button.hide()
+		action2Button.hide()
 	$MessageNode.show()
 
 

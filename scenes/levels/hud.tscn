@@ -8,15 +8,22 @@
 script = ExtResource("1_s2til")
 
 [node name="MessageNode" type="Node2D" parent="."]
+position = Vector2(512, 736)
 
-[node name="ColorRect" type="ColorRect" parent="MessageNode"]
-offset_left = 192.0
-offset_top = 648.0
-offset_right = 832.0
-offset_bottom = 736.0
+[node name="Shape" type="ColorRect" parent="MessageNode"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -88.0
+offset_right = 320.0
+grow_horizontal = 2
+grow_vertical = 0
 color = Color(0.101961, 0, 0.529412, 1)
 
-[node name="Message" type="Label" parent="MessageNode/ColorRect"]
+[node name="Message" type="Label" parent="MessageNode/Shape"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -28,7 +35,7 @@ grow_horizontal = 2
 text = "Ceci est un message de test
 sur deux lignes"
 
-[node name="HFlowContainer" type="HFlowContainer" parent="MessageNode/ColorRect"]
+[node name="HFlowContainer" type="HFlowContainer" parent="MessageNode/Shape"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -43,19 +50,19 @@ grow_horizontal = 0
 grow_vertical = 0
 alignment = 2
 
-[node name="Action1Button" type="Button" parent="MessageNode/ColorRect/HFlowContainer"]
+[node name="Action1Button" type="Button" parent="MessageNode/Shape/HFlowContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 shortcut = SubResource("Shortcut_3knyk")
 text = "Action1"
 
-[node name="Action2Button" type="Button" parent="MessageNode/ColorRect/HFlowContainer"]
+[node name="Action2Button" type="Button" parent="MessageNode/Shape/HFlowContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 shortcut = SubResource("Shortcut_3knyk")
 text = "Action2"
 
-[connection signal="pressed" from="MessageNode/ColorRect/HFlowContainer/Action1Button" to="." method="_on_action_1_button_pressed"]
-[connection signal="pressed" from="MessageNode/ColorRect/HFlowContainer/Action2Button" to="." method="_on_action_2_button_pressed"]
+[connection signal="pressed" from="MessageNode/Shape/HFlowContainer/Action1Button" to="." method="_on_action_1_button_pressed"]
+[connection signal="pressed" from="MessageNode/Shape/HFlowContainer/Action2Button" to="." method="_on_action_2_button_pressed"]

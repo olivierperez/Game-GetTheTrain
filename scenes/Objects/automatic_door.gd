@@ -1,4 +1,5 @@
 extends StaticBody2D
+class_name AutomaticDoor
 
 signal on_player_enter
 
