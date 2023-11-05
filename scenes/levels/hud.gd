@@ -43,10 +43,12 @@ func hide_message():
 
 
 func _on_action_1_button_pressed():
+	$ClickAudio.play()
 	hide_message()
 	on_action_clicked.emit(_code1)
 
 
 func _on_action_2_button_pressed():
+	$ClickAudio.play()
 	hide_message()
 	on_action_clicked.emit(_code2)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtfkbntqcc3g4"]
+[gd_scene load_steps=4 format=3 uid="uid://dtfkbntqcc3g4"]
 
 [ext_resource type="Script" path="res://scenes/levels/hud.gd" id="1_s2til"]
+[ext_resource type="AudioStream" uid="uid://cxfwfgwcwkbn5" path="res://audio/click.wav" id="2_0xb13"]
 
 [sub_resource type="Shortcut" id="Shortcut_3knyk"]
 
@@ -65,6 +66,10 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 shortcut = SubResource("Shortcut_3knyk")
 text = "Action2"
+
+[node name="ClickAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_0xb13")
+volume_db = -5.0
 
 [connection signal="pressed" from="MessageNode/Shape/HFlowContainer/Action1Button" to="." method="_on_action_1_button_pressed"]
 [connection signal="pressed" from="MessageNode/Shape/HFlowContainer/Action2Button" to="." method="_on_action_2_button_pressed"]

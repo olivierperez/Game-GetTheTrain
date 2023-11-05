@@ -22,6 +22,7 @@ func _on_body_entered_in_sensor(body):
 	if body is PlayablePlayer:
 		on_player_enter.emit()
 		if !is_locked:
+			$DoorAudio.play()
 			$AnimatedSprite2D.play()
 
 

@@ -31,6 +31,7 @@ func _on_ticket_machine_entered():
 
 func _on_player_enter_hs_ticket_machine():
 	if !has_ticket:
+		$MachineHS.play()
 		hud.show_message(
 			"Cette machine semble hors service, c'est étonnant.",
 			"Arf!"
@@ -51,6 +52,7 @@ func _on_hud_action_clicked(code):
 		has_ticket = true
 		leftDoorToDock.unlock()
 		rightDoorToDock.unlock()
+		$TicketAudio.play(0.5)
 	elif code == "go_holidays":
 		hud.show_message(
 			"Pauvre fou ! Il n'est pas l'heure de repartir en vacances.\nRentre donc chez toi, ta petite vie t'attend.",
