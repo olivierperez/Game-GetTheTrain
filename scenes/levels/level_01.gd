@@ -11,6 +11,11 @@ func _ready():
 	leftDoorToDock = $AutomaticDoor_toDock_left
 	rightDoorToDock = $AutomaticDoor_toDock_right
 
+	hud.show_message(
+		"Les vacances se sont bien passées ? Et bien elle sont finies !\nPrends le train de 10h pour rentrer chez toi.",
+		"Message reçu"
+	)
+
 
 func _on_ticket_machine_entered():
 	if !has_ticket:
