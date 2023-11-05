@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://n7b22gsfb5k4"]
+[gd_scene load_steps=15 format=3 uid="uid://n7b22gsfb5k4"]
 
 [ext_resource type="Texture2D" uid="uid://cwd2seqqhkcev" path="res://scenes/levels/TileSets/Tileset.png" id="1_8621u"]
 [ext_resource type="Script" path="res://scenes/levels/level_01.gd" id="1_x6kct"]
 [ext_resource type="PackedScene" uid="uid://cuwqfswhhwydl" path="res://scenes/character/player.tscn" id="2_e0hu8"]
 [ext_resource type="PackedScene" uid="uid://beveh35ahb7r8" path="res://scenes/Objects/automatic_door.tscn" id="3_tja8i"]
 [ext_resource type="PackedScene" uid="uid://dtfkbntqcc3g4" path="res://scenes/levels/hud.tscn" id="4_0bxgj"]
+[ext_resource type="PackedScene" uid="uid://dwte2ktuntb4g" path="res://scenes/Objects/clock.tscn" id="5_8dtar"]
 [ext_resource type="PackedScene" uid="uid://vrk5qsnxlfvw" path="res://scenes/Objects/ticket_machine.tscn" id="6_qfs7o"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m6taf"]
@@ -248,13 +249,21 @@ is_locked = true
 position = Vector2(512, 144)
 is_locked = true
 
-[node name="HUD" parent="." instance=ExtResource("4_0bxgj")]
+[node name="HUD" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_0bxgj")]
+player = NodePath("../Player")
 
 [node name="TicketMachine" parent="." instance=ExtResource("6_qfs7o")]
 position = Vector2(512, 384)
+
+[node name="Clock" parent="." instance=ExtResource("5_8dtar")]
+position = Vector2(408, 128)
+start_minutes = 57
+end_hours = 10
+end_minutes = 0
 
 [connection signal="on_player_enter" from="AutomaticDoor_toDock_left" to="." method="_on_player_enter_in_doors_to_dock"]
 [connection signal="on_player_enter" from="AutomaticDoor_toDock_right" to="." method="_on_player_enter_in_doors_to_dock"]
 [connection signal="on_action_clicked" from="HUD" to="." method="_on_hud_action_clicked"]
 [connection signal="on_player_exit_machine" from="TicketMachine" to="." method="_on_ticket_machine_exit"]
 [connection signal="on_player_open_machine" from="TicketMachine" to="." method="_on_ticket_machine_entered"]
+[connection signal="timeout" from="Clock" to="." method="_on_clock_timeout"]

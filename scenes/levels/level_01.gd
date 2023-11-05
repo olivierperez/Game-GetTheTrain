@@ -55,3 +55,11 @@ func _on_player_enter_in_doors_to_dock():
 			"Ne compte pas prendre un train sans ticket mon ami.",
 			"Ah oui, pas con"
 		)
+
+
+func _on_clock_timeout():
+	$Player.disable()
+	hud.show_message(
+		"Trop tard, tu as raté ton train !",
+		"Arf!"
+	)
