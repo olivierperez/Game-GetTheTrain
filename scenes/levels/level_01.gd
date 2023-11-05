@@ -29,6 +29,19 @@ func _on_ticket_machine_entered():
 		)
 
 
+func _on_player_enter_hs_ticket_machine():
+	if !has_ticket:
+		hud.show_message(
+			"Cette machine semble hors service, c'est étonnant.",
+			"Arf!"
+		)
+	else:
+		hud.show_message(
+			"Tu as déjà un ticket, qu'est-ce que tu irais faire avec un second ?",
+			"Ho... désolé"
+		)
+
+
 func _on_ticket_machine_exit():
 	hud.hide_message()
 

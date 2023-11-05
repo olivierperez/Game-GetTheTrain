@@ -253,6 +253,12 @@ is_locked = true
 player = NodePath("../Player")
 
 [node name="TicketMachine" parent="." instance=ExtResource("6_qfs7o")]
+position = Vector2(744, 160)
+
+[node name="TicketMachineHS_Left" parent="." instance=ExtResource("6_qfs7o")]
+position = Vector2(256, 384)
+
+[node name="TicketMachineHS_Right" parent="." instance=ExtResource("6_qfs7o")]
 position = Vector2(512, 384)
 
 [node name="Clock" parent="." instance=ExtResource("5_8dtar")]
@@ -266,4 +272,6 @@ end_minutes = 0
 [connection signal="on_action_clicked" from="HUD" to="." method="_on_hud_action_clicked"]
 [connection signal="on_player_exit_machine" from="TicketMachine" to="." method="_on_ticket_machine_exit"]
 [connection signal="on_player_open_machine" from="TicketMachine" to="." method="_on_ticket_machine_entered"]
+[connection signal="on_player_open_machine" from="TicketMachineHS_Left" to="." method="_on_player_enter_hs_ticket_machine"]
+[connection signal="on_player_open_machine" from="TicketMachineHS_Right" to="." method="_on_player_enter_hs_ticket_machine"]
 [connection signal="timeout" from="Clock" to="." method="_on_clock_timeout"]
