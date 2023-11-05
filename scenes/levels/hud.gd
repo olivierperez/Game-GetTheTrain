@@ -3,6 +3,8 @@ class_name HUD
 
 signal on_action_clicked(code: String)
 
+@export var player: PlayablePlayer
+
 var _code1: String = ""
 var _code2: String = ""
 
@@ -35,16 +37,19 @@ func show_message(
 		action2Button.hide()
 	$MessageNode.show()
 
+	player.disable()
+
 
 func hide_message():
 	$MessageNode.hide()
+	player.enable()
 
 
 func _on_action_1_button_pressed():
-	$MessageNode.hide()
+	hide_message()
 	on_action_clicked.emit(_code1)
 
 
 func _on_action_2_button_pressed():
-	$MessageNode.hide()
+	hide_message()
 	on_action_clicked.emit(_code2)

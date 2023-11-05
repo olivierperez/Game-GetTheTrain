@@ -12,16 +12,29 @@ var direction: Vector2 = Vector2.ZERO :
 		facing = value
 		_update_animation()
 
-var facing = Vector2.DOWN
+var facing: Vector2 = Vector2.DOWN
+var disabled: bool = false
 
 
 func _physics_process(__):
+	if disabled:
+		return
+
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * speed
 	move_and_slide()
 
 	if get_real_velocity() == Vector2.ZERO:
 		direction = Vector2.ZERO
+
+
+func disable():
+	disabled = true
+	$AnimatedSprite2D.stop()
+
+
+func enable():
+	disabled = false
 
 
 func _update_animation():
