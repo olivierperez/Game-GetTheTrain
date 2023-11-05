@@ -4,6 +4,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_mb12i"]
 font_names = PackedStringArray("Sans-Serif")
+subpixel_positioning = 0
 
 [node name="Clock" type="Node2D"]
 script = ExtResource("1_14elt")
