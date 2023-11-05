@@ -8,15 +8,12 @@ signal on_action_clicked(code: String)
 var _code1: String = ""
 var _code2: String = ""
 
-var messageLabel: Label
-var action1Button: Button
-var action2Button: Button
+@onready var messageLabel: Label = $MessageNode/Shape/Message
+@onready var action1Button: Button = $MessageNode/Shape/HFlowContainer/Action1Button
+@onready var action2Button: Button = $MessageNode/Shape/HFlowContainer/Action2Button
 
 func _ready():
 	$MessageNode.hide()
-	messageLabel = $MessageNode/Shape/Message
-	action1Button = $MessageNode/Shape/HFlowContainer/Action1Button
-	action2Button = $MessageNode/Shape/HFlowContainer/Action2Button
 
 
 func show_message(

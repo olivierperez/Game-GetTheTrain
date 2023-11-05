@@ -13,10 +13,9 @@ var current_minutes: int
 var current_seconds: int = 0
 
 var show_colon = true
-var label: Label
+@onready var label: Label = $ColorRect/Label
 
 func _ready():
-	label = $ColorRect/Label
 	current_hours = start_hours
 	current_minutes = start_minutes
 	_update_time()

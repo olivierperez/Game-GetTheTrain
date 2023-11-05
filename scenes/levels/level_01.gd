@@ -2,15 +2,11 @@ extends Node2D
 
 
 var has_ticket: bool = false
-var hud: HUD
-var leftDoorToDock: AutomaticDoor
-var rightDoorToDock: AutomaticDoor
+@onready var hud: HUD = $HUD
+@onready var leftDoorToDock: AutomaticDoor = $AutomaticDoor_toDock_left
+@onready var rightDoorToDock: AutomaticDoor = $AutomaticDoor_toDock_right
 
 func _ready():
-	hud = $HUD
-	leftDoorToDock = $AutomaticDoor_toDock_left
-	rightDoorToDock = $AutomaticDoor_toDock_right
-
 	hud.show_message(
 		"Les vacances se sont bien passées ? Et bien elle sont finies !\nPrends le train de 10h pour rentrer chez toi.",
 		"Message reçu"
