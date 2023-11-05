@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://vrk5qsnxlfvw"]
+
+[ext_resource type="Script" path="res://scenes/Objects/ticket_machine.gd" id="1_vi7c5"]
+[ext_resource type="Texture2D" uid="uid://bx1l8uterfve8" path="res://scenes/Objects/Sprites/ticket_machine.png" id="2_kunpo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcrsk"]
+size = Vector2(24, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kaqxu"]
+size = Vector2(16, 6.5)
+
+[node name="TicketMachine" type="StaticBody2D"]
+script = ExtResource("1_vi7c5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kunpo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pcrsk")
+
+[node name="Area" type="Area2D" parent="."]
+
+[node name="DetectionShape2D" type="CollisionShape2D" parent="Area"]
+position = Vector2(0, 19.25)
+shape = SubResource("RectangleShape2D_kaqxu")
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_area_body_exited"]
