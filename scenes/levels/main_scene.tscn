@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkhoj7dqp0iwq"]
+
+[ext_resource type="Script" path="res://scenes/levels/main_scene.gd" id="1_gajg6"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_gajg6")
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 171.0
+offset_top = 112.0
+offset_right = 429.0
+offset_bottom = 170.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Get The Train"
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 248.0
+offset_top = 248.0
+offset_right = 332.0
+offset_bottom = 279.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Démarrer"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

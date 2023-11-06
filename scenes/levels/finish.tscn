@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bptkndgoi445g"]
+
+[node name="Finish" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 233.0
+offset_top = 166.0
+offset_right = 349.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "This is the end!"
+vertical_alignment = 1

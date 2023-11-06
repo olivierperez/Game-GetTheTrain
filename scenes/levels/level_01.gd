@@ -29,20 +29,6 @@ func _on_ticket_machine_entered():
 		)
 
 
-func _on_player_enter_hs_ticket_machine():
-	if !has_ticket:
-		$MachineHS.play()
-		hud.show_message(
-			"Cette machine semble hors service, c'est étonnant.",
-			"Arf!"
-		)
-	else:
-		hud.show_message(
-			"Tu as déjà un ticket, qu'est-ce que tu irais faire avec un second ?",
-			"Ho... désolé"
-		)
-
-
 func _on_ticket_machine_exit():
 	hud.hide_message()
 
@@ -58,6 +44,8 @@ func _on_hud_action_clicked(code):
 			"Pauvre fou ! Il n'est pas l'heure de repartir en vacances.\nRentre donc chez toi, ta petite vie t'attend.",
 			"Ok, je me ressaisi"
 		)
+	elif code == "finish":
+		get_tree().change_scene_to_file("res://scenes/levels/finish.tscn")
 
 
 func _on_player_enter_in_doors_to_dock():
@@ -73,4 +61,19 @@ func _on_clock_timeout():
 	hud.show_message(
 		"Trop tard, tu as raté ton train !",
 		"Arf!"
+	)
+
+
+func _on_train_locomotive_entered():
+	hud.show_message(
+		"Tu croyais vraiment que t'allais conduire !?",
+		"Haha non c'était pour rire"
+	)
+
+
+func _on_train_wagons_entered():
+	hud.show_message(
+		"GG gros, t'as réussi à prendre ton train, vivement qu'on soit arrivés. J'espère qu'on n'aura pas de soucis en route...",
+		"C'est parti",
+		"finish"
 	)

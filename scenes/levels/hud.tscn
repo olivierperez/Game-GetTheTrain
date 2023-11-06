@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtfkbntqcc3g4"]
+[gd_scene load_steps=3 format=3 uid="uid://dtfkbntqcc3g4"]
 
 [ext_resource type="Script" path="res://scenes/levels/hud.gd" id="1_s2til"]
-[ext_resource type="AudioStream" uid="uid://cxfwfgwcwkbn5" path="res://audio/click.wav" id="2_0xb13"]
 
 [sub_resource type="Shortcut" id="Shortcut_3knyk"]
 
@@ -35,8 +34,9 @@ offset_top = 8.0
 offset_right = 276.0
 offset_bottom = 64.0
 grow_horizontal = 2
-text = "Ceci est un message de test
-sur deux lignes"
+text = "Ceci est un message de test assez grand pour dépasser la taille d'une seule ligne un peu sans aucun sens."
+autowrap_mode = 3
+max_lines_visible = 2
 
 [node name="HFlowContainer" type="HFlowContainer" parent="MessageNode/Shape"]
 layout_mode = 1
@@ -68,7 +68,6 @@ shortcut = SubResource("Shortcut_3knyk")
 text = "Action2"
 
 [node name="ClickAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_0xb13")
 volume_db = -5.0
 
 [connection signal="pressed" from="MessageNode/Shape/HFlowContainer/Action1Button" to="." method="_on_action_1_button_pressed"]

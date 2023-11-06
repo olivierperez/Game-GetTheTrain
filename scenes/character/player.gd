@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name PlayablePlayer
 
 
-@export var speed = 300
+@export var speed = 250
 var direction: Vector2 = Vector2.ZERO :
 	get:
 		return direction

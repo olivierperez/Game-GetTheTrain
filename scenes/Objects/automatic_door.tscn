@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://beveh35ahb7r8"]
+[gd_scene load_steps=9 format=3 uid="uid://beveh35ahb7r8"]
 
 [ext_resource type="Texture2D" uid="uid://c0o0gnw5mjvtf" path="res://scenes/Objects/Sprites/AutomaticDoor.png" id="1_1yh5c"]
 [ext_resource type="Script" path="res://scenes/Objects/automatic_door.gd" id="1_j6tmk"]
-[ext_resource type="AudioStream" uid="uid://gfrfxmqkyc6c" path="res://audio/door.wav" id="3_pjd2y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ossrj"]
 atlas = ExtResource("1_1yh5c")
@@ -57,7 +56,6 @@ shape = SubResource("RectangleShape2D_wf8q2")
 shape = SubResource("RectangleShape2D_mudsl")
 
 [node name="DoorAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_pjd2y")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered_in_sensor"]
