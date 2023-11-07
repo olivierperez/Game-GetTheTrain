@@ -8,7 +8,7 @@ var has_ticket: bool = false
 
 func _ready():
 	hud.show_message(
-		"Les vacances se sont bien passées ? Et bien elle sont finies !\nPrends le train de 10h pour rentrer chez toi.",
+		"Les vacances se sont bien passées ? Et bien elles sont finies !\nPrends le train de 10h pour rentrer chez toi.",
 		"Message reçu"
 	)
 
