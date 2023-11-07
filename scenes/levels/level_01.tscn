@@ -272,11 +272,16 @@ start_minutes = 57
 end_hours = 10
 end_minutes = 0
 
-[node name="Train" parent="." instance=ExtResource("8_8c11q")]
+[node name="Train" parent="." node_paths=PackedStringArray("leaving_destination") instance=ExtResource("8_8c11q")]
 z_index = 1
-position = Vector2(434, 47)
+position = Vector2(392, 48)
+leaving_destination = NodePath("../TrainLeavingDestionation")
+speed = 100
 
 [node name="TicketAudio" type="AudioStreamPlayer2D" parent="."]
+
+[node name="TrainLeavingDestionation" type="Node2D" parent="."]
+position = Vector2(-512, 48)
 
 [connection signal="on_player_enter" from="AutomaticDoor_toDock_left" to="." method="_on_player_enter_in_doors_to_dock"]
 [connection signal="on_player_enter" from="AutomaticDoor_toDock_right" to="." method="_on_player_enter_in_doors_to_dock"]

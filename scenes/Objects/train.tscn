@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhyrsrva7afmq"]
+[gd_scene load_steps=10 format=3 uid="uid://bhyrsrva7afmq"]
 
 [ext_resource type="Texture2D" uid="uid://ckbte4qcagsrl" path="res://scenes/Objects/Sprites/Train.png" id="1_n7kga"]
 [ext_resource type="Script" path="res://scenes/Objects/train.gd" id="1_pynra"]
@@ -23,6 +23,25 @@ size = Vector2(88, 36)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q72uu"]
 size = Vector2(474, 26)
 
+[sub_resource type="Gradient" id="Gradient_nxlr0"]
+colors = PackedColorArray(0.172833, 0.172833, 0.172833, 1, 0.442911, 0.442911, 0.442911, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_74vhd"]
+gradient = SubResource("Gradient_nxlr0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j2dpa"]
+particle_flag_disable_z = true
+spread = 20.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 75.0
+angular_velocity_max = 10.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 10.0
+scale_max = 15.0
+color_ramp = SubResource("GradientTexture1D_74vhd")
+
 [node name="Train" type="StaticBody2D"]
 script = ExtResource("1_pynra")
 
@@ -43,6 +62,15 @@ shape = SubResource("RectangleShape2D_fa42o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_q72uu")
+disabled = true
+
+[node name="SmokeParticles" type="GPUParticles2D" parent="."]
+z_index = 10
+position = Vector2(-164, 0)
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_j2dpa")
+lifetime = 1.5
 
 [connection signal="body_entered" from="WagonsArea" to="." method="_on_wagons_area_body_entered"]
 [connection signal="body_entered" from="LocomotiveArea" to="." method="_on_locomotive_area_body_entered"]

@@ -77,3 +77,6 @@ func _on_train_wagons_entered():
 		"C'est parti",
 		"finish"
 	)
+	$Train.leave()
+	$Player.visible = false
+	$Player.disable()
