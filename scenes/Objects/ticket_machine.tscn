@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://vrk5qsnxlfvw"]
+[gd_scene load_steps=6 format=3 uid="uid://vrk5qsnxlfvw"]
 
 [ext_resource type="Script" path="res://scenes/Objects/ticket_machine.gd" id="1_vi7c5"]
 [ext_resource type="Texture2D" uid="uid://bx1l8uterfve8" path="res://scenes/Objects/Sprites/ticket_machine.png" id="2_kunpo"]
+[ext_resource type="AudioStream" uid="uid://dyyxv1ft6j2xg" path="res://audio/machine_hs.mp3" id="3_m0t2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcrsk"]
 size = Vector2(24, 34)
@@ -25,6 +26,7 @@ position = Vector2(0, 19.25)
 shape = SubResource("RectangleShape2D_kaqxu")
 
 [node name="MachineHS" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_m0t2a")
 
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_area_body_exited"]
