@@ -141,6 +141,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ebwl6"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_3dfrl")
 

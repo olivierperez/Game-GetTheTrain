@@ -6,7 +6,13 @@ class_name PlayablePlayer
 @export var gravity = 40.0
 @export var jump_force = 10
 
-var state: State = State.IDLE
+var state: State = State.IDLE :
+	get:
+		return state
+	set(value):
+		state = value
+		_update_collision()
+
 var direction: Vector2 = Vector2.ZERO :
 	get:
 		return direction
@@ -102,6 +108,13 @@ func _update_animation():
 		$AnimatedSprite2D.play()
 
 
+func _update_collision():
+	if (state == State.JUMPING):
+		set_collision_mask_value(2, false)
+	else:
+		set_collision_mask_value(2, true)
+
+
 func _get_direction_name() -> String:
 	if direction.y < 0:
 		return "Up"
@@ -113,4 +126,3 @@ func _get_direction_name() -> String:
 		return "Left"
 	else:
 		return ""
-
