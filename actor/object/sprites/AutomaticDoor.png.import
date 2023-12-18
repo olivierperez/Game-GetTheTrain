@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckbte4qcagsrl"
-path="res://.godot/imported/Train.png-30ef9a2e5b3cf91bd03824bea8ad19e3.ctex"
+uid="uid://c0o0gnw5mjvtf"
+path="res://.godot/imported/AutomaticDoor.png-50483c4b7e2069b3b2d29c012b41ed7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Objects/Sprites/Train.png"
-dest_files=["res://.godot/imported/Train.png-30ef9a2e5b3cf91bd03824bea8ad19e3.ctex"]
+source_file="res://actor/object/sprites/AutomaticDoor.png"
+dest_files=["res://.godot/imported/AutomaticDoor.png-50483c4b7e2069b3b2d29c012b41ed7c.ctex"]
 
 [params]
 

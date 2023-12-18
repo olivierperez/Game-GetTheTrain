@@ -5,6 +5,11 @@ class_name PlayablePlayer
 @export var speed = 250
 @export var gravity = 40.0
 @export var jump_force = 10
+@export var vertical_velocity: float = 0
+@export var vertical_position: float = 0
+
+@onready var actionable_finder = %ActionableFinder
+@onready var direction_node = %Direction
 
 var state: State = State.IDLE :
 	get:
@@ -20,27 +25,33 @@ var direction: Vector2 = Vector2.ZERO :
 		direction = value
 		facing = value
 		_update_animation()
+		_update_actionable_finder()
 
 var facing: Vector2 = Vector2.DOWN
 var disabled: bool = false
 
-@export var vertical_velocity: float = 0
-@export var vertical_position: float = 0
-
 enum State { IDLE, RUNNING, JUMPING }
 
-func _physics_process(delta):
-	if disabled:
-		return
+
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("action"):
+		_on_action()
 
 	if Input.is_action_just_pressed("jump") && state != State.JUMPING:
 		_start_jumping()
 
 	match(state):
 		State.IDLE:
-			_process_idle(delta)
+			_process_idle()
 		State.RUNNING:
-			_process_running(delta)
+			_process_running()
+
+
+func _physics_process(delta):
+	if disabled:
+		return
+
+	match(state):
 		State.JUMPING:
 			_process_jumping(delta)
 
@@ -50,18 +61,26 @@ func _physics_process(delta):
 		direction = Vector2.ZERO
 
 
+func _on_action():
+	var actionnables = actionable_finder.get_overlapping_areas()
+	if actionnables.size() > 0:
+		actionnables[0].action()
+
+
 func _start_jumping():
 	vertical_velocity = -jump_force
 	state = State.JUMPING
 	_update_animation()
 
 
-func _process_idle(__):
-	_process_direction_change()
+func _process_idle():
+	_detect_direction_change()
+	_apply_velocity()
 
 
-func _process_running(__):
-	_process_direction_change()
+func _process_running():
+	_detect_direction_change()
+	_apply_velocity()
 
 
 func _process_jumping(delta):
@@ -71,17 +90,24 @@ func _process_jumping(delta):
 	$AnimatedSprite2D.scale = Vector2(1 + 0.3 * jump_percent, 1 + 0.3 * jump_percent)
 
 	if vertical_position >= 0:
-		vertical_velocity = 0
-		vertical_position = 0
-		$AnimatedSprite2D.scale = Vector2(1, 1)
 		if direction != Vector2.ZERO:
 			state = State.RUNNING
 		else:
 			state = State.IDLE
 
+		vertical_velocity = 0
+		vertical_position = 0
+		$AnimatedSprite2D.scale = Vector2(1, 1)
+		_detect_direction_change()
+		_apply_velocity()
+		_update_animation()
 
-func _process_direction_change():
+
+func _detect_direction_change():
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+
+
+func _apply_velocity():
 	velocity = direction * speed
 
 
@@ -106,6 +132,16 @@ func _update_animation():
 	else:
 		$AnimatedSprite2D.animation = "Move" + direction_name
 		$AnimatedSprite2D.play()
+
+func _update_actionable_finder():
+	if direction == Vector2.RIGHT:
+		direction_node.rotation = deg_to_rad(90)
+	elif direction == Vector2.LEFT:
+		direction_node.rotation = deg_to_rad(-90)
+	elif direction == Vector2.DOWN:
+		direction_node.rotation = deg_to_rad(180)
+	elif direction == Vector2.UP:
+		direction_node.rotation = 0
 
 
 func _update_collision():

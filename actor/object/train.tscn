@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://bhyrsrva7afmq"]
 
-[ext_resource type="Texture2D" uid="uid://ckbte4qcagsrl" path="res://scenes/Objects/Sprites/Train.png" id="1_n7kga"]
-[ext_resource type="Script" path="res://scenes/Objects/train.gd" id="1_pynra"]
+[ext_resource type="Script" path="res://actor/object/train.gd" id="1_pynra"]
+[ext_resource type="Texture2D" uid="uid://ckbte4qcagsrl" path="res://actor/object/sprites/Train.png" id="2_h0p3c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qjglh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_n7kga")
+"texture": ExtResource("2_h0p3c")
 }],
 "loop": true,
 "name": &"default",
@@ -32,12 +32,10 @@ gradient = SubResource("Gradient_nxlr0")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j2dpa"]
 particle_flag_disable_z = true
 spread = 20.0
-gravity = Vector3(0, 0, 0)
 initial_velocity_min = 50.0
 initial_velocity_max = 75.0
 angular_velocity_max = 10.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+gravity = Vector3(0, 0, 0)
 scale_min = 10.0
 scale_max = 15.0
 color_ramp = SubResource("GradientTexture1D_74vhd")

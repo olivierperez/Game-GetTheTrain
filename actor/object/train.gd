@@ -1,4 +1,4 @@
-extends PhysicsBody2D
+extends StaticBody2D
 class_name Train
 
 signal on_locomotive_entered

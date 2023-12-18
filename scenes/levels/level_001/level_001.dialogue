@@ -1,0 +1,79 @@
+~ start
+
+Narrateur: Les vacances se sont bien passées ? Et bien elles sont finies !\nPrends le train de 10h pour rentrer chez toi.
+- Message reçu
+
+=> END
+
+
+~ doors_to_dock
+
+if !has_ticket:
+	Contrôleur: Ne compte pas prendre un train sans ticket mon ami.
+	- Ah oui, pas con
+
+=> END
+
+
+~ ticket_machine
+
+if has_ticket:
+	Narrateur: Tu as déjà un ticket, qu'est-ce que tu irais faire avec un second ?
+	- Ho... désolé
+	=> END
+
+Machine: Quel ticket souhaites-tu acheter ?
+- Ticket vers chez moi
+	do buy_ticket()
+- Partir en vacances
+	Narrateur: Pauvre fou ! Il n'est pas l'heure de repartir en vacances.\nRentre donc chez toi, ta petite vie t'attend.
+	- Ok, je me ressaisi
+
+=> END
+
+
+~ hs_ticket_machine
+
+Machine: Cette machine semble hors service, c'est étonnant.
+- Arf!
+
+=> END
+
+~ wagon
+
+do train_departure()
+Narrateur: GG gros, t'as réussi à prendre ton train, vivement qu'on soit arrivés. J'espère qu'on n'aura pas de soucis en route...
+- C'est parti
+	do finish()
+
+=> END
+
+
+~ locomotive
+
+Conducteur: Tu croyais vraiment que t'allais conduire !?
+- Haha non c'était pour rire
+
+=> END
+
+
+~ timeout
+
+Narrateur: Trop tard, tu as raté ton train !
+- Arf!
+
+=> END
+
+~ example
+
+Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+Nathan: Here are some choices.
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
+- Start again => start
+- End the conversation => END
+Nathan: For more information see the online documentation.
+
+=> END

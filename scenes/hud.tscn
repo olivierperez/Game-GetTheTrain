@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dtfkbntqcc3g4"]
 
-[ext_resource type="Script" path="res://scenes/levels/hud.gd" id="1_s2til"]
+[ext_resource type="Script" path="res://scenes/hud.gd" id="1_s2til"]
 [ext_resource type="AudioStream" uid="uid://cxfwfgwcwkbn5" path="res://audio/click.wav" id="2_0ptl6"]
 
 [sub_resource type="Shortcut" id="Shortcut_3knyk"]
@@ -55,6 +55,7 @@ grow_vertical = 0
 alignment = 2
 
 [node name="Action1Button" type="Button" parent="MessageNode/Shape/HFlowContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -62,6 +63,7 @@ shortcut = SubResource("Shortcut_3knyk")
 text = "Action1"
 
 [node name="Action2Button" type="Button" parent="MessageNode/Shape/HFlowContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8

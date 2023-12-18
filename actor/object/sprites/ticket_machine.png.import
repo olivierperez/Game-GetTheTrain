@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcql6bi3itacs"
-path="res://.godot/imported/fences.png-2b4ffa5c520c63a61df46f11f9fd0615.ctex"
+uid="uid://bx1l8uterfve8"
+path="res://.godot/imported/ticket_machine.png-2546327873d85caba57eeead211ae937.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Objects/Sprites/fences.png"
-dest_files=["res://.godot/imported/fences.png-2b4ffa5c520c63a61df46f11f9fd0615.ctex"]
+source_file="res://actor/object/sprites/ticket_machine.png"
+dest_files=["res://.godot/imported/ticket_machine.png-2546327873d85caba57eeead211ae937.ctex"]
 
 [params]
 

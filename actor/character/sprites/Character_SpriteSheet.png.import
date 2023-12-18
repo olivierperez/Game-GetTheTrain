@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx1l8uterfve8"
-path="res://.godot/imported/ticket_machine.png-8bc63c59d2e30102d2a17df7e4ca2246.ctex"
+uid="uid://eoetuoalb4ob"
+path="res://.godot/imported/Character_SpriteSheet.png-fb246e9ae457e656df5fd382a0e43bad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Objects/Sprites/ticket_machine.png"
-dest_files=["res://.godot/imported/ticket_machine.png-8bc63c59d2e30102d2a17df7e4ca2246.ctex"]
+source_file="res://actor/character/sprites/Character_SpriteSheet.png"
+dest_files=["res://.godot/imported/Character_SpriteSheet.png-fb246e9ae457e656df5fd382a0e43bad.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://vrk5qsnxlfvw"]
 
-[ext_resource type="Script" path="res://scenes/Objects/ticket_machine.gd" id="1_vi7c5"]
-[ext_resource type="Texture2D" uid="uid://bx1l8uterfve8" path="res://scenes/Objects/Sprites/ticket_machine.png" id="2_kunpo"]
+[ext_resource type="Script" path="res://actor/object/ticket_machine.gd" id="1_vi7c5"]
+[ext_resource type="Texture2D" uid="uid://bx1l8uterfve8" path="res://actor/object/sprites/ticket_machine.png" id="2_1ctqe"]
 [ext_resource type="AudioStream" uid="uid://dyyxv1ft6j2xg" path="res://audio/machine_hs.mp3" id="3_m0t2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcrsk"]
@@ -14,7 +14,7 @@ size = Vector2(16, 6.5)
 script = ExtResource("1_vi7c5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_kunpo")
+texture = ExtResource("2_1ctqe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pcrsk")
@@ -29,4 +29,3 @@ shape = SubResource("RectangleShape2D_kaqxu")
 stream = ExtResource("3_m0t2a")
 
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
-[connection signal="body_exited" from="Area" to="." method="_on_area_body_exited"]

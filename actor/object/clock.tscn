@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwte2ktuntb4g"]
 
-[ext_resource type="Script" path="res://scenes/Objects/clock.gd" id="1_14elt"]
+[ext_resource type="Script" path="res://actor/object/clock.gd" id="1_14elt"]
 
 [sub_resource type="SystemFont" id="SystemFont_mb12i"]
 font_names = PackedStringArray("Sans-Serif")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eoetuoalb4ob"
-path="res://.godot/imported/Character_SpriteSheet.png-3d6684232a129d8e4a1345cbf3710b6b.ctex"
+uid="uid://ccr7ycd7gubp0"
+path="res://.godot/imported/machine.jpg-030914db654e656ac40ca3db3b6476c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/character/Sprites/Character_SpriteSheet.png"
-dest_files=["res://.godot/imported/Character_SpriteSheet.png-3d6684232a129d8e4a1345cbf3710b6b.ctex"]
+source_file="res://actor/portrait/machine.jpg"
+dest_files=["res://.godot/imported/machine.jpg-030914db654e656ac40ca3db3b6476c2.ctex"]
 
 [params]
 
