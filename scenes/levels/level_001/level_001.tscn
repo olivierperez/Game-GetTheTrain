@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://n7b22gsfb5k4"]
+[gd_scene load_steps=26 format=3 uid="uid://n7b22gsfb5k4"]
 
 [ext_resource type="Texture2D" uid="uid://cwd2seqqhkcev" path="res://scenes/levels/TileSets/Tileset.png" id="1_8621u"]
 [ext_resource type="Script" path="res://scenes/levels/level_001/level_001.gd" id="1_x6kct"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://e7okloxln2p6" path="res://scenes/levels/level_001/level_001.dialogue" id="9_e28o4"]
 [ext_resource type="AudioStream" uid="uid://dqyo1rtbm1mej" path="res://audio/ticket.wav" id="9_wl4bs"]
 [ext_resource type="PackedScene" uid="uid://byhfd8b83x7ri" path="res://actor/object/fences.tscn" id="10_v0h83"]
+[ext_resource type="AudioStream" uid="uid://dyyxv1ft6j2xg" path="res://audio/machine_hs.mp3" id="13_q0fq4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m6taf"]
 
@@ -285,7 +286,6 @@ shape = SubResource("RectangleShape2D_ny0pw")
 
 [node name="TicketMachineHS_Left" parent="." instance=ExtResource("6_qfs7o")]
 position = Vector2(256, 384)
-config = 1
 
 [node name="Actionnable" parent="TicketMachineHS_Left" instance=ExtResource("8_0yq42")]
 dialogueResource = ExtResource("9_e28o4")
@@ -297,7 +297,6 @@ shape = SubResource("RectangleShape2D_dftur")
 
 [node name="TicketMachineHS_Right" parent="." instance=ExtResource("6_qfs7o")]
 position = Vector2(512, 384)
-config = 1
 
 [node name="Actionnable" parent="TicketMachineHS_Right" instance=ExtResource("8_0yq42")]
 dialogueResource = ExtResource("9_e28o4")
@@ -343,6 +342,10 @@ position = Vector2(-512, 48)
 
 [node name="Fences" parent="." instance=ExtResource("10_v0h83")]
 position = Vector2(832, 312)
+
+[node name="MachineHS" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("13_q0fq4")
 
 [connection signal="on_player_enter" from="AutomaticDoor_toDock_left" to="." method="_on_player_enter_in_doors_to_dock"]
 [connection signal="on_player_enter" from="AutomaticDoor_toDock_right" to="." method="_on_player_enter_in_doors_to_dock"]

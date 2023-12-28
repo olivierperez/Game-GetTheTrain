@@ -1,31 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://vrk5qsnxlfvw"]
+[gd_scene load_steps=3 format=3 uid="uid://vrk5qsnxlfvw"]
 
-[ext_resource type="Script" path="res://actor/object/ticket_machine.gd" id="1_vi7c5"]
 [ext_resource type="Texture2D" uid="uid://bx1l8uterfve8" path="res://actor/object/sprites/ticket_machine.png" id="2_1ctqe"]
-[ext_resource type="AudioStream" uid="uid://dyyxv1ft6j2xg" path="res://audio/machine_hs.mp3" id="3_m0t2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcrsk"]
 size = Vector2(24, 34)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kaqxu"]
-size = Vector2(16, 6.5)
-
-[node name="TicketMachine" type="StaticBody2D"]
-script = ExtResource("1_vi7c5")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D"]
 texture = ExtResource("2_1ctqe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="TicketMachine" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TicketMachine"]
 shape = SubResource("RectangleShape2D_pcrsk")
-
-[node name="Area" type="Area2D" parent="."]
-
-[node name="DetectionShape2D" type="CollisionShape2D" parent="Area"]
-position = Vector2(0, 19.25)
-shape = SubResource("RectangleShape2D_kaqxu")
-
-[node name="MachineHS" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_m0t2a")
-
-[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]

@@ -34,6 +34,7 @@ Machine: Quel ticket souhaites-tu acheter ?
 
 ~ hs_ticket_machine
 
+do play_machine_hs()
 Machine: Cette machine semble hors service, c'est étonnant.
 - Arf!
 

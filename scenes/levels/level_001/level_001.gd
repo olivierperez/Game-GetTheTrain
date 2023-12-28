@@ -45,3 +45,7 @@ func _on_clock_timeout():
 		load("res://scenes/levels/level_001/level_001.dialogue"),
 		"timeout"
 	)
+
+
+func play_machine_hs():
+	%MachineHS.play()
