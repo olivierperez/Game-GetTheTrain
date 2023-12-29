@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://co00moxftpji8"
+path="res://.godot/imported/level_002.dialogue-513515dac4df2a7e84675a46a4e19944.tres"
+
+[deps]
+
+source_file="res://scenes/levels/level_002/level_002.dialogue"
+dest_files=["res://.godot/imported/level_002.dialogue-513515dac4df2a7e84675a46a4e19944.tres"]
+
+[params]
+
+defaults=true

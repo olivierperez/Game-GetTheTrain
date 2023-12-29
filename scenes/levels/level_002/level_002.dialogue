@@ -1,0 +1,48 @@
+~ start
+
+Train: Les voies sont bloqués pour une raison quelconque, nous ne pouvons pas continuer notre chemin. Veuillez descendre du train.
+Train: J'insiste, descendez du train ! Ce n'était pas une questions ! Même toi là...
+do appear()
+
+=> END
+
+
+~ hs_ticket_machine
+
+do play_machine_hs()
+Machine: Cette machine semble hors service, c'est étonnant.
+- Arf!
+
+=> END
+
+
+~ ticket_machine
+
+Machine: Quel ticket souhaites-tu acheter ?
+- Partir en vacances
+	Narrateur: Ce n'est pas le moment d'abandonner, on est si près du but...
+	- Ok, je me ressaisi
+		=> ticket_machine
+- Ticket vers chez moi
+	Narrateur: Tout doux ! T'as pas compris que ton train ne peut pas continuer sur les voies qui vont chez toi ?
+	=> ticket_machine
+- Ticket vers une autre ville
+	do buy_ticket()
+	Narrateur: C'est pas tout à fait dans la bonne direction mais au moins ça nous rapprochera un peu.
+
+=> END
+
+
+~ train
+
+if has_ticket:
+	do train_departure()
+	Narrateur: Bon OK on ne part pas dans la bonne direction mais au moins on se rapproche de la maison, ça va bien se passer.
+	Narrateur: Ça va bien se passer, hein !?
+	Narrateur: Hein !?
+	- C'est parti
+		do finish()
+else
+	Contrôleur: Hé gros ! Ce train a changé de direction, il te faut un nouveau ticket.
+
+=> END

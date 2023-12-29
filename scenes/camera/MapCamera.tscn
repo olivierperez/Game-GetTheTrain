@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7qi3o4l0pd5n"]
+
+[ext_resource type="Script" path="res://scenes/camera/MapCamera.gd" id="1_skkls"]
+
+[node name="MapCamera" type="Camera2D"]
+limit_left = 0
+limit_top = 0
+script = ExtResource("1_skkls")
