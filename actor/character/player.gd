@@ -7,6 +7,7 @@ class_name PlayablePlayer
 @export var jump_force = 10
 @export var vertical_velocity: float = 0
 @export var vertical_position: float = 0
+@export var initial_orientation: Vector2 = Vector2.UP
 
 @onready var actionable_finder = %ActionableFinder
 @onready var direction_node = %Direction
@@ -22,15 +23,21 @@ var direction: Vector2 = Vector2.ZERO :
 	get:
 		return direction
 	set(value):
-		direction = value
-		facing = value
-		_update_animation()
-		_update_actionable_finder()
+		if direction != value:
+			print("direction: " + str(value))
+			direction = value
+			facing = value
+			_update_animation()
+			_update_actionable_finder()
 
-var facing: Vector2 = Vector2.DOWN
+var facing: Vector2 = Vector2.DOWN # Variable useless?
 var disabled: bool = false
 
 enum State { IDLE, RUNNING, JUMPING }
+
+
+func _ready():
+	direction = initial_orientation
 
 
 func _unhandled_input(event):
@@ -152,13 +159,14 @@ func _update_collision():
 
 
 func _get_direction_name() -> String:
-	if direction.y < 0:
+	if direction.y < -0.1:
 		return "Up"
-	elif direction.y > 0:
+	elif direction.y > 0.1:
+		print("down? " + str(direction))
 		return "Down"
-	elif direction.x > 0:
+	elif direction.x > 0.1:
 		return "Right"
-	elif direction.x < 0:
+	elif direction.x < -0.1:
 		return "Left"
 	else:
 		return ""

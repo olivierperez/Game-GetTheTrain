@@ -156,16 +156,6 @@ animation = &"MoveUp"
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_ebwl6")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_left = 0
-limit_top = 0
-limit_right = 1024
-limit_bottom = 768
-position_smoothing_speed = 10.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-editor_draw_drag_margin = true
-
 [node name="Direction" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, 6)

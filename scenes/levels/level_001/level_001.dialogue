@@ -23,22 +23,14 @@ if has_ticket:
 	=> END
 
 Machine: Quel ticket souhaites-tu acheter ?
-- Ticket vers chez moi
-	do buy_ticket()
 - Partir en vacances
 	Narrateur: Pauvre fou ! Il n'est pas l'heure de repartir en vacances.\nRentre donc chez toi, ta petite vie t'attend.
 	- Ok, je me ressaisi
+- Ticket vers chez moi
+	do buy_ticket()
 
 => END
 
-
-~ hs_ticket_machine
-
-do play_machine_hs()
-Machine: Cette machine semble hors service, c'est étonnant.
-- Arf!
-
-=> END
 
 ~ wagon
 

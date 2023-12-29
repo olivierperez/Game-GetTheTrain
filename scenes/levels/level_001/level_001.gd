@@ -29,7 +29,7 @@ func train_departure():
 
 
 func finish():
-	get_tree().change_scene_to_file("res://scenes/finish.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/level_002/level_002.tscn")
 
 
 func _on_player_enter_in_doors_to_dock():
@@ -45,7 +45,3 @@ func _on_clock_timeout():
 		load("res://scenes/levels/level_001/level_001.dialogue"),
 		"timeout"
 	)
-
-
-func play_machine_hs():
-	%MachineHS.play()

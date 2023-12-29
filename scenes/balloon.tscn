@@ -123,6 +123,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Dialogue..."
+seconds_per_pause_step = 0.15
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
 layout_mode = 1
