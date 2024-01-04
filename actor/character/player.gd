@@ -37,9 +37,13 @@ enum State { IDLE, RUNNING, JUMPING }
 
 func _ready():
 	direction = initial_orientation
+	disabled = !visible
 
 
 func _unhandled_input(event):
+	if disabled:
+		return
+
 	if Input.is_action_just_pressed("action"):
 		_on_action()
 
