@@ -43,13 +43,17 @@ initial_orientation = Vector2(2.08165e-12, 1)
 tileMap = NodePath("../../TileMap")
 metadata/_edit_lock_ = true
 
-[node name="TrainLeavingDestionation" type="Node2D" parent="."]
+[node name="TrainLeavingDestination" type="Node2D" parent="."]
 position = Vector2(-512, 48)
 
-[node name="Train" parent="." node_paths=PackedStringArray("leaving_destination") instance=ExtResource("4_5jfx4")]
-unique_name_in_owner = true
+[node name="TrainArrivalDestination" type="Node2D" parent="."]
 position = Vector2(282, 48)
-leaving_destination = NodePath("../TrainLeavingDestionation")
+
+[node name="Train" parent="." node_paths=PackedStringArray("leaving_destination", "arriving_destination") instance=ExtResource("4_5jfx4")]
+unique_name_in_owner = true
+position = Vector2(509, 48)
+leaving_destination = NodePath("../TrainLeavingDestination")
+arriving_destination = NodePath("../TrainArrivalDestination")
 
 [node name="Actionnable" parent="Train" instance=ExtResource("7_iakoy")]
 dialogueResource = ExtResource("8_5r7b8")
@@ -127,3 +131,5 @@ stream = ExtResource("10_dkucy")
 [node name="TicketAudio" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("11_sk2fa")
+
+[connection signal="on_train_arrived" from="Train" to="." method="_on_train_arrived"]

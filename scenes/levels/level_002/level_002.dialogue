@@ -1,7 +1,9 @@
 ~ start
 
 Train: Les voies sont bloqués pour une raison quelconque, nous ne pouvons pas continuer notre chemin. Veuillez descendre du train.
-Train: J'insiste, descendez du train ! Ce n'était pas une questions ! Même toi là...
+Train: J'insiste, descendez du train ! Ce n'était pas une questions !
+Train: Même toi là...
+- Oups pardon
 do appear()
 
 => END
