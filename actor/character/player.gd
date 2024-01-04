@@ -24,7 +24,6 @@ var direction: Vector2 = Vector2.ZERO :
 		return direction
 	set(value):
 		if direction != value:
-			print("direction: " + str(value))
 			direction = value
 			facing = value
 			_update_animation()
@@ -162,7 +161,6 @@ func _get_direction_name() -> String:
 	if direction.y < -0.1:
 		return "Up"
 	elif direction.y > 0.1:
-		print("down? " + str(direction))
 		return "Down"
 	elif direction.x > 0.1:
 		return "Right"
