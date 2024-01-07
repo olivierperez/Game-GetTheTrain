@@ -50,11 +50,13 @@ frame_progress = 1.0
 [node name="CollisionShape2D_closed" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_wf8q2")
+debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_mudsl")
+debug_color = Color(0, 1, 0, 0.419608)
 
 [node name="DoorAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_rqa7c")

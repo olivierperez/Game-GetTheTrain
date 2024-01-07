@@ -51,16 +51,19 @@ sprite_frames = SubResource("SpriteFrames_qjglh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WagonsArea"]
 position = Vector2(48, 0)
 shape = SubResource("RectangleShape2D_adule")
+debug_color = Color(0, 1, 0, 0.419608)
 
 [node name="LocomotiveArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LocomotiveArea"]
 position = Vector2(-192, 0)
 shape = SubResource("RectangleShape2D_fa42o")
+debug_color = Color(0, 1, 0, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_q72uu")
 disabled = true
+debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="SmokeParticles" type="GPUParticles2D" parent="."]
 z_index = 10

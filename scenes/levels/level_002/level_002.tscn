@@ -62,6 +62,7 @@ dialogueStart = "train"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Train/Actionnable"]
 shape = SubResource("RectangleShape2D_wym1k")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="TicketMachineHS_Left1" parent="." instance=ExtResource("6_mvghg")]
 position = Vector2(256, 160)

@@ -12,3 +12,4 @@ texture = ExtResource("2_1ctqe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TicketMachine"]
 shape = SubResource("RectangleShape2D_pcrsk")
+debug_color = Color(1, 0, 0, 0.419608)
