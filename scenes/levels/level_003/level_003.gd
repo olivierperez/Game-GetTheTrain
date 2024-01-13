@@ -1,8 +1,9 @@
 extends Node2D
 
+
+@onready var arriving_train: Train = %Arriving_Train
+@onready var departure_train: Train = $Departure_Train
 @onready var player: PlayablePlayer = %Player
-@onready var train: Train = %Train
-@onready var machine_hs = %MachineHS
 @onready var ticket_audio = %TicketAudio
 
 
@@ -10,12 +11,12 @@ var has_ticket: bool = false
 
 
 func _ready():
-	train.arrive()
+	arriving_train.arrive()
 
 
 func _on_train_arrived():
 	DialogueManager.show_dialogue_balloon(
-		load("res://scenes/levels/level_002/level_002.dialogue"),
+		load("res://scenes/levels/level_003/level_003.dialogue"),
 		"start"
 	)
 
@@ -30,15 +31,12 @@ func buy_ticket():
 	ticket_audio.play(0.5)
 
 
-func play_machine_hs():
-	machine_hs.play()
-
-
 func train_departure():
-	train.leave()
-	player.visible = false
 	player.disable()
+	player.visible = false
+	departure_train.leave()
 
 
 func finish():
-	get_tree().change_scene_to_file("res://scenes/levels/level_003/level_003.tscn")
+	print("c'est le finish")
+	get_tree().change_scene_to_file("res://scenes/finish.tscn")

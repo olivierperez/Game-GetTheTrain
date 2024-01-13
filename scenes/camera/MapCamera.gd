@@ -11,4 +11,3 @@ func _ready():
 	var max_y = (tile_map_end.y - 1) * tile_size.y
 	limit_right = max_x
 	limit_bottom = max_y
-	pass

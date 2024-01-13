@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/levels/level_001/level_001.gd" id="1_x6kct"]
 [ext_resource type="PackedScene" uid="uid://cuwqfswhhwydl" path="res://actor/character/player.tscn" id="2_e0hu8"]
-[ext_resource type="TileSet" uid="uid://bfa5r8i4tfujl" path="res://scenes/levels/TileSets/Station/station001.tres" id="2_j2q0w"]
+[ext_resource type="TileSet" uid="uid://jibufbdycnxg" path="res://scenes/levels/TileSets/Station/Station001.tres" id="2_j2q0w"]
 [ext_resource type="PackedScene" uid="uid://beveh35ahb7r8" path="res://actor/object/automatic_door.tscn" id="3_tja8i"]
 [ext_resource type="PackedScene" uid="uid://dtfkbntqcc3g4" path="res://scenes/hud.tscn" id="4_0bxgj"]
 [ext_resource type="PackedScene" uid="uid://b7qi3o4l0pd5n" path="res://scenes/camera/MapCamera.tscn" id="4_vfw2e"]

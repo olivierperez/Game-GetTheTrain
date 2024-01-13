@@ -1,7 +1,7 @@
 ~ start
 
 Train: Les voies sont bloqués pour une raison quelconque, nous ne pouvons pas continuer notre chemin. Veuillez descendre du train.
-Train: J'insiste, descendez du train ! Ce n'était pas une questions !
+Train: J'insiste, descendez du train ! Ce n'était pas une question !
 Train: Même toi là...
 - Oups pardon
 do appear()
