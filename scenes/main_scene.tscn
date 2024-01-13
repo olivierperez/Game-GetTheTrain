@@ -1,32 +1,54 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkhoj7dqp0iwq"]
+[gd_scene load_steps=4 format=3 uid="uid://dkhoj7dqp0iwq"]
 
 [ext_resource type="Script" path="res://scenes/main_scene.gd" id="1_gajg6"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_0514p"]
+action = &"action"
+
+[sub_resource type="Shortcut" id="Shortcut_1hvrk"]
+events = [SubResource("InputEventAction_0514p")]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_gajg6")
 
-[node name="Title" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 171.0
-offset_top = 112.0
-offset_right = 429.0
-offset_bottom = 170.0
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 600.0
+offset_bottom = 400.0
 grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -51.0
+offset_right = 129.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="Container/VBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "Get The Train"
 
-[node name="StartButton" type="Button" parent="."]
-offset_left = 248.0
-offset_top = 248.0
-offset_right = 332.0
-offset_bottom = 279.0
+[node name="StartButton" type="Button" parent="Container/VBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+shortcut = SubResource("Shortcut_1hvrk")
 text = "Démarrer"
-metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
