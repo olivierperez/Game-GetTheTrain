@@ -11,6 +11,7 @@ class_name PlayablePlayer
 
 @onready var actionable_finder = %ActionableFinder
 @onready var direction_node = %Direction
+@onready var jump_audio = $JumpAudio
 
 var state: State = State.IDLE :
 	get:
@@ -81,6 +82,7 @@ func _start_jumping():
 	vertical_velocity = -jump_force
 	state = State.JUMPING
 	_update_animation()
+	jump_audio.play()
 
 
 func _process_idle():

@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://cuwqfswhhwydl"]
+[gd_scene load_steps=23 format=3 uid="uid://cuwqfswhhwydl"]
 
 [ext_resource type="Script" path="res://actor/character/player.gd" id="1_3dfrl"]
 [ext_resource type="Texture2D" uid="uid://eoetuoalb4ob" path="res://actor/character/sprites/Character_SpriteSheet.png" id="2_ig5i1"]
+[ext_resource type="AudioStream" uid="uid://c7icnmsr5oja3" path="res://audio/jump.wav" id="3_n5koa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k2b65"]
 atlas = ExtResource("2_ig5i1")
@@ -172,3 +173,8 @@ collision_mask = 4
 position = Vector2(8, -15)
 shape = SubResource("CircleShape2D_q6d85")
 debug_color = Color(0, 1, 0, 0.419608)
+
+[node name="JumpAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_n5koa")
+volume_db = -3.688
+bus = &"SFX"
