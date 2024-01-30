@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkhoj7dqp0iwq"]
+[gd_scene load_steps=5 format=3 uid="uid://dkhoj7dqp0iwq"]
 
 [ext_resource type="Script" path="res://scenes/main_scene.gd" id="1_gajg6"]
+[ext_resource type="AudioStream" uid="uid://cxfwfgwcwkbn5" path="res://audio/click.wav" id="2_3qu53"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_0514p"]
 action = &"action"
@@ -52,5 +53,10 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 25
 shortcut = SubResource("Shortcut_1hvrk")
 text = "Démarrer"
+
+[node name="ClickAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3qu53")
+volume_db = 4.622
+bus = &"SFX"
 
 [connection signal="pressed" from="Container/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

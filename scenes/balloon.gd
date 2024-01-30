@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var character_label: RichTextLabel = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
+@onready var click_audio: AudioStreamPlayer2D = $ClickAudio
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -131,4 +132,6 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
+	click_audio.play()
+	await click_audio.finished
 	next(response.next_id)
